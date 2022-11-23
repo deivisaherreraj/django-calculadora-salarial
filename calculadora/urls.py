@@ -15,19 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from salary.views import SalaryCreate, SalaryDelete, SalaryList, SalaryUpdate, SalaryView
+from salary.views import SalaryList
 from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # La ruta 'leer' en donde listamos todos los registros o salary de la Base de Datos
-    path('salary/', SalaryList.as_view(template_name = "salary/index.html"), name='read'), 
-    # La ruta 'detalles' en donde mostraremos una página con los detalles de un salary o registro 
-    path('salary/view/<uuid:pk>', SalaryView.as_view(template_name = "salary/view.html"), name='view'), 
-    # La ruta 'crear' en donde mostraremos un formulario para crear un nuevo salary o registro  
-    path('salary/create', SalaryCreate.as_view(template_name = "salary/create.html"), name='create'), 
-    # La ruta 'actualizar' en donde mostraremos un formulario para actualizar un salary o registro de la Base de Datos 
-    path('salary/update/<uuid:pk>', SalaryUpdate.as_view(template_name = "salary/update.html"), name='update'),  
-    # La ruta 'eliminar' que usaremos para eliminar un salary o registro de la Base de Datos 
-    path('salary/delete/<uuid:pk>', SalaryDelete.as_view(), name='delete'),
+    path('salary/', SalaryList.as_view(template_name = "salary/index.html"), name='read')
 ]
