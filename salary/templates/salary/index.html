@@ -50,7 +50,9 @@
           <div class="col-md-10">
             <div class="table-responsive">
               <div class="formulario" align="left">
-                <div class="display-2 text-center"><h1>Salario neto</h1></div>                
+                <div class="display-2 text-center">
+                  <h1>Calculadora Salarial</h1>
+                </div>                
                 {% csrf_token %}
                 <div class="container">
                   <div class="row">
@@ -155,7 +157,7 @@
 
     <footer class="text-muted mt-3 mb-3">
       <div align="center">
-        Desarrollado por <a href="#" target="_blank">Deivis Herrera</a>
+        Desarrollado por <a href="#" target="_blank">Deivis Herrera, Carlos Ozuna</a>
       </div>
     </footer>
 
@@ -190,18 +192,20 @@
         );
         let salarioNeto = parseFloat(TotalPercepciones - TotalDeducciones);
 
-        $("#SueldoBase").html(`<h3>$${SueldoBase.toFixed(2)}</h3>`);
-        $("#CanastaBasica").html(`<h3>$${CanastaBasica.toFixed(2)}</h3>`);
-        $("#Apoyo").html(`<h3>$${Apoyo.toFixed(2)}</h3>`);
-        $("#Antiguedad").html(`<h3>$${Antiguedad.toFixed(2)}</h3>`);
-        $("#Estimulo").html(`<h3>$${Estimulo.toFixed(2)}</h3>`);
+        $("#SueldoBase").html(`<h5>$${SueldoBase.toFixed(2)}</h5>`);
+        $("#CanastaBasica").html(`<h5>$${CanastaBasica.toFixed(2)}</h5>`);
+        $("#ServicioSalud").html(`<h5>$${ServicioSalud.toFixed(2)}</h5>`);
+        $("#Apoyo").html(`<h5>$${Apoyo.toFixed(2)}</h5>`);
+        $("#AFORE").html(`<h5>$${AFORE.toFixed(2)}</h5>`);
+        $("#Antiguedad").html(`<h5>$${Antiguedad.toFixed(2)}</h5>`);
+        $("#Estimulo").html(`<h5>$${Estimulo.toFixed(2)}</h5>`);
         $("#TotalPercepciones").html(
-          `<h3>$${TotalPercepciones.toFixed(2)}</h3>`
+          `<h5>$${TotalPercepciones.toFixed(2)}</h5>`
         );
-        $("#ISR").html(`<h3>$${ISR.toFixed(2)}</h3>`);
-        $("#Sindicato").html(`<h3>$${Sindicato.toFixed(2)}</h3>`);
-        $("#TotalDeducciones").html(`<h3>$${TotalDeducciones.toFixed(2)}</h3>`);
-        $("#salarioNeto").html(`<h3>$${salarioNeto.toFixed(2)}</h3>`);
+        $("#ISR").html(`<h5>$${ISR.toFixed(2)}</h5>`);
+        $("#Sindicato").html(`<h5>$${Sindicato.toFixed(2)}</h5>`);
+        $("#TotalDeducciones").html(`<h5>$${TotalDeducciones.toFixed(2)}</h5>`);
+        $("#salarioNeto").html(`<h5>$${salarioNeto.toFixed(2)}</h5>`);
       }
     </script>
   </body>
